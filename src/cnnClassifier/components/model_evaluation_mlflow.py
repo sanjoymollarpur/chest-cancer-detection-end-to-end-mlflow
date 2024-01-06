@@ -54,6 +54,9 @@ class Evaluation:
 
     
     def log_into_mlflow(self):
+        print("log-into-mlflow")
+        logger.info(f"Model evalution-------3")
+
         mlflow.set_registry_uri(self.config.mlflow_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         
@@ -72,3 +75,4 @@ class Evaluation:
                 mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
             else:
                 mlflow.keras.log_model(self.model, "model")
+        logger.info(f"Model evalution-------4")
