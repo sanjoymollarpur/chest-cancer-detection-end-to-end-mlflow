@@ -6,10 +6,10 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "Chest-Cancer-Classification-Project"
-AUTHOR_USER_NAME = "entbappy"
+REPO_NAME = "chest-cancer-detection-end-to-end-mlflow"
+AUTHOR_USER_NAME = "sanjoymollarpur"
 SRC_REPO = "cnnClassifier"
-AUTHOR_EMAIL = "entbappy73@gmail.com"
+AUTHOR_EMAIL = "sanjoymollarpur@gmail.com"
 
 
 setuptools.setup(
@@ -27,3 +27,4 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src")
 )
+

@@ -11,7 +11,7 @@ class Evaluation:
     def __init__(self, config: EvaluationConfig):
         self.config = config
 
-    
+
     def _valid_generator(self):
 
         datagenerator_kwargs = dict(
@@ -40,7 +40,7 @@ class Evaluation:
     @staticmethod
     def load_model(path: Path) -> tf.keras.Model:
         return tf.keras.models.load_model(path)
-    
+
 
     def evaluation(self):
         self.model = self.load_model(self.config.path_of_model)
@@ -52,14 +52,11 @@ class Evaluation:
         scores = {"loss": self.score[0], "accuracy": self.score[1]}
         save_json(path=Path("scores.json"), data=scores)
 
-    
-    def log_into_mlflow(self):
-        print("log-into-mlflow")
-        logger.info(f"Model evalution-------3")
 
+    def log_into_mlflow(self):
         mlflow.set_registry_uri(self.config.mlflow_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
-        
+
         with mlflow.start_run():
             mlflow.log_params(self.config.all_params)
             mlflow.log_metrics(
@@ -75,4 +72,3 @@ class Evaluation:
                 mlflow.keras.log_model(self.model, "model", registered_model_name="VGG16Model")
             else:
                 mlflow.keras.log_model(self.model, "model")
-        logger.info(f"Model evalution-------4")
