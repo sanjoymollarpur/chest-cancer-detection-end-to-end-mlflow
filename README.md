@@ -1,4 +1,11 @@
-# chest-cancer-detection-end-to-end-mlflow
+### chest-cancer-detection-end-to-end-mlflow
+
+## Problem Statements:
+In this project, we aim to address an image classification problem utilizing a pre-trained model. The dataset comprises chest CT scan images categorized into two classes: cancer and normal.
+
+## Step:
+This solution employs modular coding, encompassing the entire pipeline from data collection to the deployment of a machine-learning system. The project adheres to the principles of DLOps. MLflow is employed to track the model's performance, while Dagshub facilitates collaborative development. DVC (Data Version Control) is utilized for tracking the entire pipeline. Subsequently, the solution is containerized using Docker. Furthermore, CI/CD is configured to automate the deployment process, culminating in the deployment of the model on Amazon Web Services.
+
 
 
 ## Workflows
