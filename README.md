@@ -1,4 +1,4 @@
-### chest-cancer-detection-end-to-end-mlflow
+
 
 ## Problem Statements:
 In this project, we aim to address an image classification problem utilizing a pre-trained model. The dataset comprises chest CT scan images categorized into two classes: cancer and normal.
